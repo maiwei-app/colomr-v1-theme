@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.1...v1.1.2) (2026-08-24)
+
+
+### Bug Fixes
+
+* move [@import](https://github.com/import) statements to the top of main.scss ([61f4af0](https://github.com/maiwei-app/colomr-v1-theme/commit/61f4af070e929897afdbb04e2f3b96fca5b44aba))
+* move [@import](https://github.com/import) statements to the top of main.scss ([a79f486](https://github.com/maiwei-app/colomr-v1-theme/commit/a79f48633a6570d03afbecf5f64a2f76bbb570d1))
+
 ## [1.1.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.0...v1.1.1) (2026-08-24)
 
 
