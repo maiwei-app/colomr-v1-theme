@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.0...v1.1.1) (2026-08-24)
+
+
+### Documentation
+
+* update repo URL references to maiwei-app after transfer ([a7630c1](https://github.com/maiwei-app/colomr-v1-theme/commit/a7630c16ea9ee76967825ae75e4eae1572f59adb))
+* update repo URL references to maiwei-app after transfer ([0b55731](https://github.com/maiwei-app/colomr-v1-theme/commit/0b55731de9925ad9c99fe98c00f8fb4191617e33))
+
 ## [1.1.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.0.0...v1.1.0) (2026-08-17)
 
 
