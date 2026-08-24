@@ -27,7 +27,7 @@ Dark mode by default, responsive, lightweight, and fully configurable from front
 
 ```bash
 cd your-hugo-site
-git submodule add https://github.com/colomr-cc/colomr-v1-theme.git themes/colomr-v1
+git submodule add https://github.com/maiwei-app/colomr-v1-theme.git themes/colomr-v1
 ```
 
 Set the theme in `hugo.toml`:
@@ -367,4 +367,4 @@ Third-party resources:
 - Icons: [Material Symbols](https://fonts.google.com/icons) + [Font Awesome 7](https://fontawesome.com/)
 - Fonts: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) + [Inter](https://fonts.google.com/specimen/Inter)
 
-If you use this theme, a link back to the [original repository](https://github.com/colomr-cc/colomr-v1-theme) or to [colomr.cc](https://colomr.cc) is appreciated.
+If you use this theme, a link back to the [original repository](https://github.com/maiwei-app/colomr-v1-theme) or to [colomr.cc](https://colomr.cc) is appreciated.
