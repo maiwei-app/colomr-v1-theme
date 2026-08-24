@@ -1,5 +1,9 @@
 // colomr-v1 — hoja de estilos principal
 @import "tokens";
+@import "components";
+@import "home";
+@import "page";
+@import "formacion";
 
 // Reset mínimo
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,8 +30,3 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-
-@import "components";
-@import "home";
-@import "page";
-@import "formacion";
