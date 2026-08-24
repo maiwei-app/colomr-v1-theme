@@ -9,86 +9,11 @@ on:
 
 jobs:
   quality:
-    runs-on: ubuntu-latest
-    steps:
-      # Se clona en themes/colomr-v1 para reproducir la estructura real:
-      # Hugo busca el tema por el nombre de su directorio, y el repo se llama
-      # colomr-v1-theme. Sin esto, el build no encuentra el tema.
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          path: themes/colomr-v1
-
-      - name: Sin atribución de IA (autoría del owner)
-        if: github.event_name == 'pull_request'
-        working-directory: themes/colomr-v1
-        env:
-          PR_BODY: ${{ github.event.pull_request.body }}
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          BASE_REF: ${{ github.base_ref }}
-          # SHA real de la rama: en un PR, HEAD es un commit de merge que fabrica
-          # GitHub y cuyo autor es quien abrió el PR — no el trabajo que se revisa.
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        run: |
-          AUTHOR_PATTERN='claude|anthropic|copilot|\[bot\]'
-          ATTRIB_PATTERN='co-authored-by:.*(claude|anthropic|copilot)|'
-          ATTRIB_PATTERN="${ATTRIB_PATTERN}generated (with|by)"
-          ATTRIB_PATTERN="${ATTRIB_PATTERN}.*(claude|anthropic|copilot)|"
-          ATTRIB_PATTERN="${ATTRIB_PATTERN}noreply@anthropic|🤖"
-          FAIL=0
-          RANGE="origin/$BASE_REF..$HEAD_SHA"
-          if git log "$RANGE" --format='%an <%ae> / %cn <%ce>' \
-            | grep -viE 'maibot-app\[bot\]' \
-            | grep -inE "$AUTHOR_PATTERN"; then
-            echo "::error::Autor o committer de IA detectado en los commits"
-            FAIL=1
-          fi
-          if git log "$RANGE" --format='%B' | grep -inE "$ATTRIB_PATTERN"; then
-            echo "::error::Atribución de IA detectada en mensajes de commit"
-            FAIL=1
-          fi
-          if printf '%s\n%s' "$PR_TITLE" "$PR_BODY" | grep -inE "$ATTRIB_PATTERN"; then
-            echo "::error::Atribución de IA detectada en el título o cuerpo del PR"
-            FAIL=1
-          fi
-          exit $FAIL
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
-        with:
-          # Fijada a propósito: con 'latest', el CI puede aprobar código que rompe
-          # el build en local. Se mantiene igual que en colomr.cc.
-          hugo-version: '0.164.0'
-          extended: true
-
-      # Smoke test del tema: si una plantilla o el SCSS se rompen, el build falla.
-      - name: Build del exampleSite
-        run: hugo --source themes/colomr-v1/exampleSite --themesDir ../.. --cleanDestinationDir --minify
-
-      # El build puede terminar con éxito y dejar un CSS inservible: si el
-      # transpilador no entiende una directiva, la copia tal cual a la salida.
-      # Se comprueba que el CSS existe, tiene tamaño y contiene estilos reales.
-      - name: Verificar el CSS generado
-        run: |
-          CSS="$(find themes/colomr-v1/exampleSite/public/css -name '*.css' | head -1)"
-          if [[ -z "$CSS" ]]; then
-            echo "::error::El build no ha generado ningún CSS"
-            exit 1
-          fi
-          BYTES="$(wc -c < "$CSS")"
-          echo "CSS generado: $CSS ($BYTES bytes)"
-          if [[ "$BYTES" -lt 10000 ]]; then
-            echo "::error::El CSS generado ocupa $BYTES bytes: demasiado poco, el SCSS no se ha compilado bien"
-            exit 1
-          fi
-          for SELECTOR in ".site-header" ".ftabs__tab" "--color-primary"; do
-            if ! grep -qF -- "$SELECTOR" "$CSS"; then
-              echo "::error::El CSS generado no contiene $SELECTOR"
-              exit 1
-            fi
-          done
-          echo "CSS verificado: tamaño y selectores esperados presentes"
+    uses: maiwei-app/workflows/.github/workflows/ci-hugo.yml@main
+    with:
+      hugo-version: '0.164.0'
+      theme-name: colomr-v1
+      verify-css-selectors: '.site-header,.ftabs__tab,--color-primary'
 
   sonar:
     needs: quality
