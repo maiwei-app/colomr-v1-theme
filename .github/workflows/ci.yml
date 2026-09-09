@@ -8,15 +8,15 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  quality:
+  hugo-build:
     uses: maiwei-app/workflows/.github/workflows/ci-hugo.yml@main
     with:
       hugo-version: '0.164.0'
       theme-name: colomr-v1
       verify-css-selectors: '.site-header,.ftabs__tab,--color-primary'
 
-  sonar:
-    needs: quality
+  quality-gate:
+    needs: hugo-build
     uses: maiwei-app/workflows/.github/workflows/sonar-scan.yml@main
     with:
       project-key: maiwei-app_colomr-v1-theme
