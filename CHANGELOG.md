@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.2...v1.1.3) (2026-09-16)
+
+
+### Bug Fixes
+
+* update licenselink to maiwei-app org ([2bf97de](https://github.com/maiwei-app/colomr-v1-theme/commit/2bf97de44e0f6634fa80a40e606fb5839d3c5621))
+* update licenselink to maiwei-app org ([eb3fa76](https://github.com/maiwei-app/colomr-v1-theme/commit/eb3fa76c8a7d1bce7ff958097108279643d3c494))
+
 ## [1.1.2](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.1...v1.1.2) (2026-09-09)
 
 
