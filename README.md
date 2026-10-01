@@ -285,7 +285,12 @@ providers:
     profile_url: "https://..."                # link button (omit to hide)
     profile_label: "View my profile"
     data: "badges_a"                          # loads data/badges_a.json
+    # color: "#fbbc05"                        # optional: background of the active tab
+    # on_color: "#202124"                     # optional: text on the active tab (default #fff)
+    # icon_tone: "dark"                       # optional: "dark" shows the dark icon on the active tab
 ```
+
+The `google` and `anthropic` tabs have built-in colors. `color`, `on_color` and `icon_tone` override them for any provider; when unset, nothing changes. `color` and `on_color` must be hex values (`#rgb` or `#rrggbb`), otherwise the build fails. Use `on_color: "#202124"` with `icon_tone: "dark"` on light backgrounds so the text and the icon stay readable.
 
 #### Badge data format
 

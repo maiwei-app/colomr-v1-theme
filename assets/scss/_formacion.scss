@@ -63,6 +63,13 @@
   color: #fff;
 }
 
+// Colores propios (front matter del provider: color, on_color). Misma especificidad que
+// las reglas de arriba y declarada después, así que gana.
+.ftabs__tab.ftabs__tab--custom.ftabs__tab--active {
+  background: var(--tab-color);
+  color: var(--tab-on-color, #fff);
+}
+
 .ftabs__icon {
   width: 1.25rem;
   height: 1.25rem;
@@ -88,6 +95,11 @@
   .ftabs__icon--light { display: block; }
   .ftabs__icon--dark  { display: none; }
 }
+
+// Icono oscuro en la pestaña activa (front matter del provider: icon_tone: "dark").
+// Va después de los bloques de tema oscuro para ganar a su misma especificidad.
+.ftabs__tab--active.ftabs__tab--icon-dark .ftabs__icon--light { display: none; }
+.ftabs__tab--active.ftabs__tab--icon-dark .ftabs__icon--dark  { display: block; }
 
 // --- Paneles ---
 .ftabs__panel {
