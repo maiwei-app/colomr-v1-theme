@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.3...v1.2.0) (2026-10-01)
+
+
+### Features
+
+* make the accent color configurable from hugo.toml ([1f80a2f](https://github.com/maiwei-app/colomr-v1-theme/commit/1f80a2f25f34caa125fef979ebb43c54f5321be1))
+* make the accent color configurable from hugo.toml ([e245a8a](https://github.com/maiwei-app/colomr-v1-theme/commit/e245a8a7bb9659d01f83e36683e5d416f9dd1038))
+* make the provider tab colors configurable from front matter ([973cfe5](https://github.com/maiwei-app/colomr-v1-theme/commit/973cfe5cd5d9791e071d666c5d3c8f0068fbd79f))
+* make the provider tab colors configurable from front matter ([be58b7b](https://github.com/maiwei-app/colomr-v1-theme/commit/be58b7ba41fb1ed4173484b43ac887e4215c0688))
+
 ## [1.1.3](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.2...v1.1.3) (2026-09-16)
 
 
