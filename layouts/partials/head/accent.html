@@ -1,0 +1,35 @@
+{{- /*
+  Optional accent color. When params.accent_color is set, the primary tokens are
+  overridden from it; when unset nothing is emitted and the default blue applies.
+
+    params.accent_color     hex color, e.g. "#9d8d62"
+    params.accent_on_color  hex color of the text on top of the accent (default "#ffffff")
+
+  The selectors mirror the dark-mode blocks of _tokens.scss, so the override wins in
+  every theme mode. color-mix() derives the gradient and the dark-mode tint; browsers
+  without it keep the flat accent declared first.
+*/ -}}
+{{- with .Site.Params.accent_color -}}
+  {{- $hex := `^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$` -}}
+  {{- $accent := . -}}
+  {{- $on := $.Site.Params.accent_on_color | default "#ffffff" -}}
+  {{- if not (findRE $hex $accent) -}}
+    {{- errorf "colomr-v1: params.accent_color must be a hex color like #9d8d62, got %q" $accent -}}
+  {{- end -}}
+  {{- if not (findRE $hex $on) -}}
+    {{- errorf "colomr-v1: params.accent_on_color must be a hex color like #ffffff, got %q" $on -}}
+  {{- end -}}
+  {{- $flat := printf "--color-primary:%s;--color-primary-container:%s;--color-on-primary:%s;--color-on-primary-container:%s;--color-on-gradient:%s;--gradient-primary:linear-gradient(135deg,%s,%s);" $accent $accent $on $on $on $accent $accent -}}
+  {{- $mix := printf "--gradient-primary:linear-gradient(135deg,color-mix(in srgb,%s 75%%,black),%s);--shadow-primary:color-mix(in srgb,%s 15%%,transparent);--color-primary-tint:color-mix(in srgb,%s 8%%,transparent);" $accent $accent $accent $accent -}}
+  {{- $mixDark := printf "--color-primary:color-mix(in srgb,%s 55%%,white);--color-on-primary:color-mix(in srgb,%s 25%%,black);" $accent $accent -}}
+<style id="accent-color">
+:root{ {{- $flat | safeCSS -}} }
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){ {{- $flat | safeCSS -}} }}
+[data-theme="dark"]{ {{- $flat | safeCSS -}} }
+@supports (color:color-mix(in srgb,red,blue)){
+:root{ {{- $mix | safeCSS -}} }
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){ {{- $mix | safeCSS }}{{ $mixDark | safeCSS -}} }}
+[data-theme="dark"]{ {{- $mix | safeCSS }}{{ $mixDark | safeCSS -}} }
+}
+</style>
+{{- end -}}

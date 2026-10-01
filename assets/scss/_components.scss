@@ -259,8 +259,8 @@
 
   &--primary {
     background: var(--gradient-primary);
-    color: #ffffff;
-    box-shadow: 0 4px 24px rgba(0, 88, 189, 0.15);
+    color: var(--color-on-gradient);
+    box-shadow: 0 4px 24px var(--shadow-primary);
   }
 
   &--ghost {
