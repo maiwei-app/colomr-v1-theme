@@ -33,8 +33,12 @@
 
   <div class="ftabs" role="tablist">
     {{ range $i, $p := $providers }}
+    {{- $hex := `^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$` -}}
+    {{- with $p.color }}{{ if not (findRE $hex .) }}{{ errorf "colomr-v1: providers[%d].color must be a hex color like #fbbc05, got %q" $i . }}{{ end }}{{ end -}}
+    {{- with $p.on_color }}{{ if not (findRE $hex .) }}{{ errorf "colomr-v1: providers[%d].on_color must be a hex color like #202124, got %q" $i . }}{{ end }}{{ end -}}
     <button
-      class="ftabs__tab{{ if eq $i 0 }} ftabs__tab--active{{ end }}"
+      class="ftabs__tab{{ if eq $i 0 }} ftabs__tab--active{{ end }}{{ if $p.color }} ftabs__tab--custom{{ end }}{{ if eq ($p.icon_tone | default "") "dark" }} ftabs__tab--icon-dark{{ end }}"
+      {{ with $p.color }}style="--tab-color: {{ . | safeCSS }};{{ with $p.on_color }} --tab-on-color: {{ . | safeCSS }};{{ end }}"{{ end }}
       role="tab"
       id="tabbtn-{{ $p.id }}"
       aria-controls="tab-{{ $p.id }}"
