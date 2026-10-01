@@ -65,6 +65,8 @@ languagecode = "en"
   favicon_32 = "/images/favicon-32x32.png"
   favicon_16 = "/images/favicon-16x16.png"
   since = 2024
+  # accent_color = "#9d8d62"      # optional, see "Accent color"
+  # accent_on_color = "#ffffff"   # optional, text on top of the accent
 
 # Social links (displayed in footer)
 [[params.social]]
@@ -318,6 +320,18 @@ Key variables:
 | `--font-display` | Headings font |
 | `--font-body` | Body text font |
 | `--gradient-primary` | Title highlight gradient |
+
+### Accent color
+
+To match the theme to your brand without editing any SCSS, set the accent in `hugo.toml`:
+
+```toml
+[params]
+  accent_color = "#9d8d62"      # hex, #rgb or #rrggbb
+  accent_on_color = "#ffffff"   # optional: text on top of the accent (default #ffffff)
+```
+
+The primary color, its container, the title/button gradient and the dark-mode tint are derived from `accent_color` (the gradient and the dark-mode tint use CSS `color-mix()`; browsers without it get the flat color). Check that `accent_on_color` stays readable on your accent, and switch it to a dark color if not. When `accent_color` is not set, the theme keeps its default blue. An invalid value fails the build with a clear message.
 
 ### Icons
 

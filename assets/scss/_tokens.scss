@@ -86,6 +86,9 @@
 
   // --- Gradient (used for title highlights) ---
   --gradient-primary: linear-gradient(135deg, #0058bd 0%, #2771df 100%);
+  --color-on-gradient: #ffffff;
+  --shadow-primary: rgba(0, 88, 189, 0.15);
+  --color-primary-tint: rgba(0, 88, 189, 0.08);
 }
 
 // --- Dark mode (via data-theme attribute set by JS toggle) ---
