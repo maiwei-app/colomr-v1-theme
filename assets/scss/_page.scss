@@ -125,6 +125,22 @@
   color: var(--color-primary);
 }
 
+.iblock--text .iblock__body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.iblock__content--icon {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.iblock__icon {
+  color: var(--color-primary);
+}
+
 .iblock__body--check ul {
   list-style: none;
   padding-left: 0;
@@ -170,7 +186,9 @@
 .iblock-stats__item {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.25rem;
+  text-align: center;
 }
 
 .iblock-stats__value {

@@ -246,6 +246,7 @@ blocks:
     heading: "Heading"
     highlight: true                           # optional: heading in the accent color
     list_style: "check"                       # optional: markdown lists get a check icon
+    icon: "fa-solid fa-rss"                   # optional: Font Awesome icon before the text
     body: "Paragraph text."
 
   - type: "stats"
@@ -258,7 +259,7 @@ blocks:
   - type: "cta"
     text: "Optional sentence above the button."
     label: "Let's talk"
-    url: "/contact/"                          # optional: without it the button is not clickable
+    url: "/contact/"                          # optional: page, https:// or mailto: link. Without it the button is not clickable
 
   - type: "cards"
     heading: "Heading"
