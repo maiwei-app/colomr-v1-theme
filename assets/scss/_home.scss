@@ -339,8 +339,10 @@
   gap: 0.75rem;
 }
 
-.context__icon {
-  font-size: 4.5rem !important;
+// Compound selector so it outranks the Google Fonts
+// `.material-symbols-outlined { font-size: 24px }` regardless of load order.
+.material-symbols-outlined.context__icon {
+  font-size: 4.5rem;
 }
 
 .context__stat {
