@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.6.1...v1.6.2) (2026-10-28)
+
+
+### Bug Fixes
+
+* remove emoji icon from page hero ([#55](https://github.com/maiwei-app/colomr-v1-theme/issues/55)) ([57e689d](https://github.com/maiwei-app/colomr-v1-theme/commit/57e689d8756e04cae4fca52e9a5cffa528447136)), closes [#54](https://github.com/maiwei-app/colomr-v1-theme/issues/54)
+
 ## [1.6.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.6.0...v1.6.1) (2026-10-28)
 
 
