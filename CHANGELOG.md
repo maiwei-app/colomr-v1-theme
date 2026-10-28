@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.3.1...v1.4.0) (2026-10-28)
+
+
+### Features
+
+* add stats and cta blocks and highlight/check options for text blocks ([226f335](https://github.com/maiwei-app/colomr-v1-theme/commit/226f3352d4a62eea78cb38d3c69f551ab863b133))
+* add stats and cta blocks and highlight/check options for text blocks ([2d52f63](https://github.com/maiwei-app/colomr-v1-theme/commit/2d52f634486452008dba97ff9e1980ed0d928002))
+
+
+### Bug Fixes
+
+* draw the list check icon with a mask instead of an icon font ([bab8b45](https://github.com/maiwei-app/colomr-v1-theme/commit/bab8b45f9daeba2f99b741624a61ce052b1ca102))
+
 ## [1.3.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.3.0...v1.3.1) (2026-10-28)
 
 
