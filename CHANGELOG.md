@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.6.0...v1.6.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* hide the home hero cover on small screens ([#52](https://github.com/maiwei-app/colomr-v1-theme/issues/52)) ([1d1d244](https://github.com/maiwei-app/colomr-v1-theme/commit/1d1d2441a37e9dbb0809e9417e63eb0847c29aeb))
+
 ## [1.6.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.5.1...v1.6.0) (2026-10-28)
 
 
