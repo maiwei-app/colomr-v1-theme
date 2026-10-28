@@ -80,6 +80,11 @@ languagecode = "en"
   label = "About"
   url = "/about/"
   nav_icon = "person"
+
+# Optional call to action in the header (button on desktop, last item of the mobile menu)
+[params.nav_cta]
+  label = "Let's talk 🤝"
+  url = "mailto:hello@example.com"            # page, https:// or mailto: link
 ```
 
 ### Multilingual (i18n)
