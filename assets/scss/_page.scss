@@ -121,6 +121,95 @@
   }
 }
 
+.iblock__heading--highlight {
+  color: var(--color-primary);
+}
+
+.iblock__body--check ul {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.75rem;
+
+    &::before {
+      content: "check" #{"/"} "";
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      font-family: "Material Symbols Outlined";
+      font-feature-settings: "liga";
+      font-size: 1.25rem;
+      line-height: 1;
+      color: var(--color-primary);
+    }
+  }
+}
+
+// --- Bloque stats ---
+.iblock-stats__box {
+  background-color: var(--color-surface-container-low);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.iblock-stats__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-12);
+}
+
+.iblock-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.iblock-stats__value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primary);
+}
+
+.iblock-stats__label {
+  font-size: 0.875rem;
+  color: var(--color-on-surface-variant);
+}
+
+.iblock-stats__quote {
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-primary);
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-on-surface-variant);
+}
+
+// --- Bloque cta ---
+.iblock--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.iblock-cta__text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-on-surface);
+}
+
+// Without a url the button renders as a <span>: look like a button, do not act like one.
+.iblock-cta__button:not(a) {
+  cursor: default;
+}
+
 // --- Bloque cards ---
 .iblock-cards__grid {
   display: grid;

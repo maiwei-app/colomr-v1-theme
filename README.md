@@ -244,7 +244,21 @@ tags_list:
 blocks:
   - type: "text"
     heading: "Heading"
+    highlight: true                           # optional: heading in the accent color
+    list_style: "check"                       # optional: markdown lists get a check icon
     body: "Paragraph text."
+
+  - type: "stats"
+    heading: "Heading"                        # optional
+    items:
+      - value: "+20"
+        label: "years"
+    quote: "Optional quote under the figures."
+
+  - type: "cta"
+    text: "Optional sentence above the button."
+    label: "Let's talk"
+    url: "/contact/"                          # optional: without it the button is not clickable
 
   - type: "cards"
     heading: "Heading"
