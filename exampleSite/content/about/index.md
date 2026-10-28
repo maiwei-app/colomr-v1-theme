@@ -9,7 +9,6 @@ cover: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80
 cover_ratio: "3 / 1"
 cover_position: "center center"
 cover_opacity: "0.5"
-icon: "👩‍💻"
 pageTitle: "Jane Doe"
 subtitle: "Software Engineer | Cloud Architect"
 

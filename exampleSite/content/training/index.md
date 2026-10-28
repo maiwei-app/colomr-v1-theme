@@ -8,7 +8,6 @@ cover: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80
 cover_ratio: "3 / 1"
 cover_position: "center center"
 cover_opacity: "0.5"
-icon: "📚"
 pageTitle: "Continuous Training"
 subtitle: "Theory is only half of it..."
 

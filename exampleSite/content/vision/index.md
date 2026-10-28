@@ -8,7 +8,6 @@ cover: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80
 cover_ratio: "3 / 1"
 cover_position: "center center"
 cover_opacity: "0.5"
-icon: "🔭"
 pageTitle: "Vision"
 subtitle: "Looking ahead"
 
