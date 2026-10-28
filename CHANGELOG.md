@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.5.1...v1.6.0) (2026-10-28)
+
+
+### Features
+
+* add an optional call to action to the header ([ed9d1fe](https://github.com/maiwei-app/colomr-v1-theme/commit/ed9d1fea4d90b7cba85e884569b0fe34da8468cd))
+* add an optional call to action to the header ([3dee2a8](https://github.com/maiwei-app/colomr-v1-theme/commit/3dee2a8498d5b94134ef7d2a9c7129ab7b8d9b84))
+
 ## [1.5.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.5.0...v1.5.1) (2026-10-28)
 
 
