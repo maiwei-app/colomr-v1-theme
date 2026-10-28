@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.3.0...v1.3.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* use the page background color for the interior page banner ([5b2ded4](https://github.com/maiwei-app/colomr-v1-theme/commit/5b2ded41d78f5106eb120dba495a371e14a223b1))
+* use the page background color for the interior page banner ([e485237](https://github.com/maiwei-app/colomr-v1-theme/commit/e48523725210f7677049647aed373ae1c8d1a098))
+
 ## [1.3.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.2.0...v1.3.0) (2026-10-28)
 
 
