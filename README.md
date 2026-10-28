@@ -196,7 +196,7 @@ The home page reads from `content/_index.md` front matter. Three sections:
 
 ```yaml
 hero:
-  cover: "/images/covers/hero.webp"          # background image (optional)
+  cover: "/images/covers/hero.webp"          # background image (optional, hidden below 640px)
   cover_opacity: "0.55"                       # overlay opacity 0-1 (default 0.65)
   cover_effect: "glass"                       # glass | vignette | shadow | highlight
   content_width: "34rem"                      # max width of the hero content / glass card (default 48rem)
