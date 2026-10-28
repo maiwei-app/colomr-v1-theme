@@ -133,16 +133,19 @@
     position: relative;
     padding-left: 1.75rem;
 
+    // Check drawn with a mask, so it needs no icon font and cannot flash text.
     &::before {
-      content: "check" #{"/"} "";
+      content: "";
       position: absolute;
       left: 0;
-      top: 0.35em;
-      font-family: "Material Symbols Outlined";
-      font-feature-settings: "liga";
-      font-size: 1.25rem;
-      line-height: 1;
-      color: var(--color-primary);
+      top: 0.4em;
+      width: 1.25rem;
+      height: 1.25rem;
+      background-color: var(--color-primary);
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E");
+      mask-position: center;
+      mask-size: contain;
+      mask-repeat: no-repeat;
     }
   }
 }
