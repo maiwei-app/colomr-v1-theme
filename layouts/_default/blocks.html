@@ -21,11 +21,38 @@
 <!-- Bloques de contenido -->
 <div class="ipage-content">
   {{ range .Params.blocks }}
+  {{ $block := . }}
 
   {{ if eq .type "text" }}
   <section class="iblock iblock--text">
+    {{ with .heading }}<h2 class="iblock__heading{{ if $block.highlight }} iblock__heading--highlight{{ end }}">{{ . }}</h2>{{ end }}
+    <div class="iblock__body{{ if eq ($block.list_style | default "") "check" }} iblock__body--check{{ end }}">{{ .body | markdownify }}</div>
+  </section>
+
+  {{ else if eq .type "stats" }}
+  <section class="iblock iblock--stats">
     {{ with .heading }}<h2 class="iblock__heading">{{ . }}</h2>{{ end }}
-    <div class="iblock__body">{{ .body | markdownify }}</div>
+    <div class="iblock-stats__box">
+      <ul class="iblock-stats__list">
+        {{ range .items }}
+        <li class="iblock-stats__item">
+          <span class="iblock-stats__value">{{ .value }}</span>
+          <span class="iblock-stats__label">{{ .label }}</span>
+        </li>
+        {{ end }}
+      </ul>
+      {{ with .quote }}<blockquote class="iblock-stats__quote">{{ . }}</blockquote>{{ end }}
+    </div>
+  </section>
+
+  {{ else if eq .type "cta" }}
+  <section class="iblock iblock--cta">
+    {{ with .text }}<p class="iblock-cta__text">{{ . | markdownify }}</p>{{ end }}
+    {{ with .url }}
+    <a href="{{ . | relLangURL }}" class="btn btn--primary iblock-cta__button">{{ $block.label }}</a>
+    {{ else }}
+    <span class="btn btn--primary iblock-cta__button">{{ $block.label }}</span>
+    {{ end }}
   </section>
 
   {{ else if eq .type "cards" }}
