@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.4.0...v1.5.0) (2026-10-28)
+
+
+### Features
+
+* add an icon option to text blocks and polish block styles ([856e315](https://github.com/maiwei-app/colomr-v1-theme/commit/856e3150a1ca3e904d2a676415e9b8b8002721b4))
+* add an icon option to text blocks and polish block styles ([99ffc4a](https://github.com/maiwei-app/colomr-v1-theme/commit/99ffc4ae70a6e2cdc8a8cbd48a7dad8b3dfb80ad))
+
 ## [1.4.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.3.1...v1.4.0) (2026-10-28)
 
 
