@@ -37,7 +37,7 @@
   align-items: center;
   text-align: center;
   gap: 1.5rem;
-  max-width: 48rem;
+  max-width: var(--hero-content-width, 48rem);
   margin: 0 auto;
 }
 
