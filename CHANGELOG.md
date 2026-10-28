@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.2.0...v1.3.0) (2026-10-28)
+
+
+### Features
+
+* make the hero content width configurable ([0e01a02](https://github.com/maiwei-app/colomr-v1-theme/commit/0e01a02d2de0465603e2798821551e5cd4d60038))
+* make the hero content width configurable ([4889e95](https://github.com/maiwei-app/colomr-v1-theme/commit/4889e953e5548b2b3f8f1af0d0df2cd63f076ba1))
+
+
+### Bug Fixes
+
+* replace !important on the home context icon with a compound selector ([3362db8](https://github.com/maiwei-app/colomr-v1-theme/commit/3362db80f589d1c4e3124eeb098907c89d112bfa))
+
 ## [1.2.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.1.3...v1.2.0) (2026-10-01)
 
 
