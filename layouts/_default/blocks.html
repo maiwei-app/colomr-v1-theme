@@ -26,7 +26,10 @@
   {{ if eq .type "text" }}
   <section class="iblock iblock--text">
     {{ with .heading }}<h2 class="iblock__heading{{ if $block.highlight }} iblock__heading--highlight{{ end }}">{{ . }}</h2>{{ end }}
-    <div class="iblock__body{{ if eq ($block.list_style | default "") "check" }} iblock__body--check{{ end }}">{{ .body | markdownify }}</div>
+    <div class="iblock__content{{ if $block.icon }} iblock__content--icon{{ end }}">
+      {{ with $block.icon }}<i class="{{ . }} iblock__icon" aria-hidden="true"></i>{{ end }}
+      <div class="iblock__body{{ if eq ($block.list_style | default "") "check" }} iblock__body--check{{ end }}">{{ .body | markdownify }}</div>
+    </div>
   </section>
 
   {{ else if eq .type "stats" }}
@@ -49,7 +52,8 @@
   <section class="iblock iblock--cta">
     {{ with .text }}<p class="iblock-cta__text">{{ . | markdownify }}</p>{{ end }}
     {{ with .url }}
-    <a href="{{ . | relLangURL }}" class="btn btn--primary iblock-cta__button">{{ $block.label }}</a>
+    {{ $href := . }}{{ if not (urls.Parse .).Scheme }}{{ $href = . | relLangURL }}{{ end }}
+    <a href="{{ $href }}" class="btn btn--primary iblock-cta__button">{{ $block.label }}</a>
     {{ else }}
     <span class="btn btn--primary iblock-cta__button">{{ $block.label }}</span>
     {{ end }}
