@@ -13,6 +13,10 @@
       </a>
       {{ end }}
     </div>
+    {{ with .Site.Params.nav_cta }}
+    {{ $href := .url }}{{ if not (urls.Parse .url).Scheme }}{{ $href = .url | relLangURL }}{{ end }}
+    <a href="{{ $href }}" class="btn btn--primary nav-cta">{{ .label }}</a>
+    {{ end }}
     <div class="nav-actions">
       <button class="theme-toggle" id="theme-toggle" aria-label="{{ i18n "toggle_theme" }}" onclick="window.__toggleTheme()">
         <span class="material-symbols-outlined" id="theme-icon">light_mode</span>
@@ -43,6 +47,10 @@
   <a href="{{ .url | relLangURL }}" class="nav-drawer__link{{ if eq $.RelPermalink (.url | relLangURL) }} nav-drawer__link--active{{ end }}">
     {{ with .nav_icon }}<span class="material-symbols-outlined">{{ . }}</span>{{ end }} {{ .label }}
   </a>
+  {{ end }}
+  {{ with .Site.Params.nav_cta }}
+  {{ $href := .url }}{{ if not (urls.Parse .url).Scheme }}{{ $href = .url | relLangURL }}{{ end }}
+  <a href="{{ $href }}" class="nav-drawer__link nav-drawer__link--cta">{{ .label }}</a>
   {{ end }}
   {{ if $.IsTranslated }}
   {{ range $.Translations }}

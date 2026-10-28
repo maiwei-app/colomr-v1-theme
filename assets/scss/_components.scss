@@ -75,6 +75,18 @@
   font-size: 1.2rem !important;
 }
 
+// Optional call to action between the links and the actions (params.nav_cta).
+// Hidden on mobile, where it shows in the drawer instead.
+// Compound selector: .btn is declared later and would override these rules.
+.btn.nav-cta {
+  display: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+
+  @media (min-width: 768px) { display: inline-flex; }
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -178,6 +190,7 @@
 
   &:hover { background-color: var(--color-surface-container-high); color: var(--color-on-surface); }
   &--active { color: var(--color-primary); background-color: var(--color-surface-container-high); }
+  &--cta { color: var(--color-primary); font-weight: 700; }
 }
 
 // Overlay del drawer (oculto mientras drawer está desactivado)
