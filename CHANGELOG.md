@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.5.0...v1.5.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* spread the stats figures evenly across the box ([8c2f6bd](https://github.com/maiwei-app/colomr-v1-theme/commit/8c2f6bd848691a624f0f4a7d1bbeb1f67d9bcba3))
+* spread the stats figures evenly across the box ([e2a4094](https://github.com/maiwei-app/colomr-v1-theme/commit/e2a4094da46df43b2dda5e3c4535fc319dbf7f4f))
+
 ## [1.5.0](https://github.com/maiwei-app/colomr-v1-theme/compare/v1.4.0...v1.5.0) (2026-10-28)
 
 
