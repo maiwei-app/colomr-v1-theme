@@ -5,7 +5,6 @@
 <section class="ipage-hero" style="{{ with .Params.cover_position }}--cover-pos: {{ . }};{{ end }}{{ with .Params.cover_opacity }}--cover-overlay-opacity: {{ . }};{{ end }}{{ with .Params.cover_ratio }}--cover-ratio: {{ . | safeCSS }};{{ end }}">
   <div class="ipage-hero__cover" {{ with .Params.cover }}style="background-image: url('{{ . }}')"{{ end }}></div>
   <div class="ipage-hero__profile">
-    <div class="ipage-hero__icon">{{ .Params.icon }}</div>
     <div class="ipage-hero__info">
       <h1 class="ipage-hero__title">{{ .Params.pageTitle }}</h1>
       <p class="ipage-hero__subtitle">{{ .Params.subtitle }}</p>
